@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="types" name="JEJU Server Types" schema="schema/jejuServerTypes.exsd"/>
+<extension point="org.eclipse.ui.views">
+  <category
+    id="jeju.ui.view"
+    name="Jeju"/>
+
+
+  <view
+        allowMultiple="false"
+        category="jeju.ui.view"
+        class="webx.studio.server.ui.cnf.ServersView"
+        icon="icons/jeju_servers_view.png"
+        id="jeju.server.ui.ServersView"
+        name="Servers">
+  </view>
+  <view
+        allowMultiple="false"
+        category="jeju.ui.view"
+        class="webx.studio.service.server.ui.cnf.ServiceServersView"
+        icon="icons/service.jpg"
+        id="jeju.service.server.ui.ServiceServersView"
+        name="Boort servers"
+        restorable="true">
+  </view>
+</extension>
+
+<extension
+      point="org.eclipse.ui.navigator.viewer">
+   <viewerContentBinding
+         viewerId="jeju.server.ui.ServersView">
+      <includes>
+         <contentExtension
+               isRoot="true"
+               pattern="jeju.server.ui.ServersView.content.root">
+         </contentExtension>
+      </includes>
+   </viewerContentBinding>
+	<viewer  viewerId="jeju.server.ui.ServersView">
+		<options>
+			<property name="org.eclipse.ui.navigator.hideLinkWithEditorAction"
+				value="true">
+			</property>
+		</options>
+	</viewer>
+</extension>
+<extension
+      point="org.eclipse.ui.navigator.viewer">
+   <viewerContentBinding
+         viewerId="jeju.service.server.ui.ServiceServersView">
+      <includes>
+         <contentExtension
+               isRoot="true"
+               pattern="jeju.service.server.ui.ServiceServersView.content.root">
+         </contentExtension>
+      </includes>
+   </viewerContentBinding>
+	<viewer  viewerId="jeju.service.server.ui.ServiceServersView">
+		<options>
+			<property name="org.eclipse.ui.navigator.hideLinkWithEditorAction"
+				value="true">
+			</property>
+		</options>
+	</viewer>
+</extension>
+<extension
+      point="org.eclipse.ui.navigator.navigatorContent">
+   <navigatorContent
+         activeByDefault="true"
+         contentProvider="webx.studio.server.ui.cnf.ServerContentProvider"
+         icon="icons/jeju_servers_view.png"
+         id="jeju.server.ui.ServersView.content.root"
+         labelProvider="webx.studio.server.ui.cnf.ServerLabelProvider"
+         name="Server Provider">
+      <triggerPoints>
+         <or>
+            <instanceof
+                  value="webx.studio.server.core.Server">
+            </instanceof>
+         </or>
+      </triggerPoints>
+      <actionProvider
+            class="webx.studio.server.ui.ServerActionProvider"
+            id="jeju.server.ui.ServerActionProvider">
+         <enablement>
+            <or>
+               <instanceof
+                     value="webx.studio.server.core.Server">
+               </instanceof>
+               <instanceof
+                     value="org.eclipse.core.resources.IWorkspaceRoot">
+               </instanceof>
+               <adapt
+                     type="java.util.Collection">
+                  <count
+                        value="0">
+                  </count>
+               </adapt>
+               <instanceof
+                     value="webx.studio.server.core.ServerChild">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
+      <possibleChildren>
+         <or>
+            <instanceof
+                  value="java.lang.Object">
+            </instanceof>
+         </or>
+      </possibleChildren>
+   </navigatorContent>
+</extension>
+<extension
+      point="org.eclipse.ui.navigator.navigatorContent">
+   <navigatorContent
+         activeByDefault="true"
+         contentProvider="webx.studio.service.server.ui.cnf.ServerContentProvider"
+         icon="icons/service.jpg"
+         id="jeju.service.server.ui.ServiceServersView.content.root"
+         labelProvider="webx.studio.service.server.ui.cnf.ServerLabelProvider"
+         name="Service Server Provider">
+      <triggerPoints>
+         <or>
+            <instanceof
+                  value="webx.studio.service.server.core.ServiceServer">
+            </instanceof>
+         </or>
+      </triggerPoints>
+      <actionProvider
+            class="webx.studio.service.server.ui.ServerActionProvider"
+            id="jeju.service.server.ui.ServerActionProvider">
+         <enablement>
+            <or>
+               <instanceof
+                     value="webx.studio.service.server.core.ServiceServer">
+               </instanceof>
+               <instanceof
+                     value="org.eclipse.core.resources.IWorkspaceRoot">
+               </instanceof>
+               <adapt
+                     type="java.util.Collection">
+                  <count
+                        value="0">
+                  </count>
+               </adapt>
+               <instanceof
+                     value="webx.studio.service.server.core.ServiceServerChild">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
+      <possibleChildren>
+         <or>
+            <instanceof
+                  value="java.lang.Object">
+            </instanceof>
+         </or>
+      </possibleChildren>
+   </navigatorContent>
+</extension>
+<extension
+      point="org.eclipse.ui.newWizards">
+   <category
+         id="jeju.ui.wizard"
+         name="Jeju">
+   </category>
+   <wizard
+         category="jeju.ui.wizard"
+         class="webx.studio.server.ui.wizard.NewServerWizard"
+         finalPerspective="jeju.server.perspective"
+         icon="icons/add_server.png"
+         id="jeju.ui.new.server"
+         name="Server"
+         project="false">
+   </wizard>
+   <wizard
+         category="jeju.ui.wizard"
+         class="webx.studio.service.server.ui.wizard.NewSerivceServerWizard"
+         finalPerspective="jeju.server.perspective"
+         icon="icons/service.jpg"
+         id="jeju.ui.new.service.server"
+         name="Boort server"
+         project="false">
+   </wizard>
+</extension>
+<extension
+      point="webx.studio.server.types">
+   <serverType
+         behaviourClass="webx.studio.server.core.jetty.JettyServerBehaviour"
+         id="jeju.server.type.jetty"
+         launchConfigId="jetty.launchConfigurationType"
+         name="Jetty v7.2.2"
+         vendor="Jetty"
+         version="7.0">
+   </serverType>
+   <serverType
+         behaviourClass="webx.studio.server.core.jboss.JbossServerBehaviour"
+         id="jeju.server.type.jboss"
+         launchConfigId="jboss.launchConfigurationType"
+         name="JBoss v4.2"
+         vendor="JBoss"
+         version="4.2">
+   </serverType>
+</extension>
+<extension
+      point="org.eclipse.ui.actionSets">
+   <actionSet
+         id="jeju.ui.new.actionSet"
+         label="Server"
+         visible="false">
+      <action
+            class="webx.studio.server.ui.actions.NewServerAction"
+            icon="icons/wiz_new_server.gif"
+            id="jeju.ui.action.new.server"
+            label="Create Server"
+            style="push"
+            toolbarPath="servers"
+            tooltip="Create Server">
+      </action>
+   </actionSet>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <category
+         description="Server"
+         id="jeju.server.ui"
+         name="Server">
+   </category>
+   <command
+         categoryId="jeju.server.ui"
+         defaultHandler="webx.studio.server.ui.actions.ServerActionHandler"
+         description="Run server"
+         id="jeju.server.run"
+         name="Run">
+   </command>
+   <command
+         categoryId="jeju.server.ui"
+         defaultHandler="webx.studio.server.ui.actions.ServerActionHandler"
+         description="Debug server"
+         id="jeju.server.debug"
+         name="Debug">
+   </command>
+   <command
+         categoryId="jeju.server.ui"
+         defaultHandler="webx.studio.server.ui.actions.ServerActionHandler"
+         description="Stop the server"
+         id="jeju.server.stop"
+         name="Stop">
+   </command>
+   <command
+         categoryId="jeju.server.ui"
+         defaultHandler="webx.studio.server.ui.actions.ServerActionHandler"
+         description="Server File Edit"
+         id="jeju.server.file.edit"
+         name="fileEdit">
+   </command>
+   <command
+         categoryId="jeju.server.ui"
+         defaultHandler="webx.studio.service.server.ui.actions.ServerActionHandler"
+         description="Service Server File Edit"
+         id="jeju.service.server.file.edit"
+         name="fileEdit">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.bindings">
+   <key
+         commandId="jeju.server.run"
+         contextId="jeju.server.serverViewScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+M3+R">
+   </key>
+   <key
+         commandId="jeju.server.debug"
+         contextId="jeju.server.serverViewScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+M3+D">
+   </key>
+   <key
+         commandId="jeju.server.stop"
+         contextId="jeju.server.serverViewScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+M3+S">
+   </key>
+   <key
+         commandId="jeju.server.file.edit"
+         contextId="jeju.server.serverViewScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+M2+M3+E">
+   </key>
+   <key
+         commandId="jeju.service.server.file.edit"
+         contextId="jeju.service.server.serverViewScope"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+M2+M3+E">
+   </key>
+</extension>
+<extension
+      point="org.eclipse.ui.contexts">
+   <context
+         description="In Servers View"
+         id="jeju.server.serverViewScope"
+         name="In Servers View"
+         parentId="org.eclipse.ui.contexts.window">
+   </context>
+   <context
+         description="In Service Servers View"
+         id="jeju.service.server.serverViewScope"
+         name="In Service Servers View"
+         parentId="org.eclipse.ui.contexts.window">
+   </context>
+</extension>
+<extension
+      point="org.eclipse.debug.core.launchConfigurationTypes">
+   <launchConfigurationType
+         delegate="webx.studio.server.core.jetty.JettyLaunchConfigurationDelegate"
+         id="jetty.launchConfigurationType"
+         modes="run, debug"
+         name="jetty.launchConfigurationType"
+         sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+         sourcePathComputerId="jeju.server.jetty.sourcePathComputer">
+   </launchConfigurationType>
+   <launchConfigurationType
+         delegate="webx.studio.service.server.core.ServicerServerLaunchConfigurationDelegate"
+         id="serviceServerLaunchType"
+         modes="run, debug"
+         name="Service server launcher"
+         sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+         sourcePathComputerId="jeju.service.server.sourcePathComputer">
+   </launchConfigurationType>
+   <!--
+   <launchConfigurationType
+         delegate="jeju.server.ui.actions.RunOnServerLaunchConfigurationDelegate"
+         delegateDescription="Runs applications on the server"
+         delegateName="Run on Server"
+         id="jeju.server.RunOnServerLaunchConfigurationDelegate"
+         name="Run on Jeju Server">
+   </launchConfigurationType>
+   -->
+</extension>
+
+<extension
+      point="org.eclipse.debug.core.sourcePathComputers">
+   <sourcePathComputer
+         class="webx.studio.server.core.jetty.launch.JettySourcePathComputerDelegate"
+         id="jeju.server.jetty.sourcePathComputer">
+   </sourcePathComputer>
+   <sourcePathComputer
+         class="webx.studio.service.server.core.launch.ServiceServerSourcePathComputerDelegate"
+         id="jeju.service.server.sourcePathComputer">
+   </sourcePathComputer>
+</extension>
+<extension
+      point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+   <launchConfigurationTabGroup
+         class="webx.studio.server.ui.launchtab.JettyLaunchConfigurationTabGroup"
+         id="jeju.server.jetty.launchConfigurationTabGroup"
+         type="jetty.launchConfigurationType">
+   </launchConfigurationTabGroup>
+   <launchConfigurationTabGroup
+         class="webx.studio.service.server.ui.launchtab.ServiceServerLaunchConfigurationTabGroup"
+         id="serviceServerLaunchType.tab"
+         type="serviceServerLaunchType">
+   </launchConfigurationTabGroup>
+</extension>
+<extension
+      point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+   <launchConfigurationTypeImage
+         configTypeID="jetty.launchConfigurationType"
+         icon="icons/jetty.gif"
+         id="jeju.server.jetty.launchConfigurationTypeImage">
+   </launchConfigurationTypeImage>
+   <launchConfigurationTypeImage
+         configTypeID="serviceServerLaunchType"
+         icon="icons/service_server.png"
+         id="jeju.service.server.launchConfigurationTypeImage">
+   </launchConfigurationTypeImage>
+</extension>
+<extension
+      point="org.eclipse.ui.decorators">
+   <decorator
+         adaptable="true"
+         class="webx.studio.server.ui.cnf.ServerDecorator"
+         icon="icons/server.gif"
+         id="jeju.server.ui.state.decorator"
+         label="Jeju Server State Decorator"
+         lightweight="true"
+         location="BOTTOM_RIGHT"
+         objectClass=" "
+         state="true">
+      <enablement>
+         <objectClass
+               name="webx.studio.server.core.Server">
+         </objectClass>
+      </enablement>
+   </decorator>
+   <decorator
+         adaptable="true"
+         class="webx.studio.service.server.ui.cnf.ServerDecorator"
+         icon="icons/service.jpg"
+         id="jeju.service.server.ui.state.decorator"
+         label="Jeju Service Server State Decorator"
+         lightweight="true"
+         objectClass="webx.studio.service.server.core.ServiceServer"
+         state="true">
+   </decorator>
+</extension>
+<extension
+      point="org.eclipse.jdt.launching.classpathProviders">
+   <classpathProvider
+            class="webx.studio.server.core.jetty.launch.JettyClasspathProvider"
+            id="jettyClassPathProvider">
+      </classpathProvider>
+   <classpathProvider
+         class="webx.studio.service.server.core.ServiceServerClasspathProvider"
+         id="serviceServerClassPathProvider">
+   </classpathProvider>
+</extension>
+<extension
+      point="org.eclipse.ui.editors">
+   <editor
+         class="webx.studio.server.ui.editor.ServerEditor"
+         default="false"
+         icon="icons/server.gif"
+         id="jeju.server.ui.editor"
+         name="Server Editor">
+   </editor>
+   <editor
+         class="webx.studio.service.server.ui.editor.ServiceServerEditor"
+         default="false"
+         icon="icons/service.jpg"
+         id="jeju.service.server.ui.editor"
+         name="Server Editor">
+   </editor>
+</extension>
+<extension
+      point="org.eclipse.ui.perspectives">
+   <perspective
+         class="webx.studio.server.ui.perspective.JejuPerspective"
+         id="jeju.server.perspective"
+         icon="icons/jeju pespective.png"
+         name="WebX">
+   </perspective>
+</extension>
+<extension
+      point="org.eclipse.ui.perspectiveExtensions">
+   <perspectiveExtension
+         targetID="jeju.server.perspective">
+
+      <perspectiveShortcut id="org.eclipse.debug.ui.DebugPerspective"/>
+         <perspectiveShortcut id="org.eclipse.jdt.ui.JavaPerspective"/>
+         <perspectiveShortcut id="org.eclipse.ui.resourcePerspective"/>
+      <newWizardShortcut
+            id="jeju.ui.new.server">
+      </newWizardShortcut>
+      <newWizardShortcut
+            id="webx3.projectcreation.ui.ProjectCreationWizard">
+      </newWizardShortcut>
+      <newWizardShortcut
+            id="webx3.module.wizard">
+      </newWizardShortcut>
+      <!--
+      <actionSet
+            id="jeju.menu.actionSet">
+      </actionSet>
+      -->
+   </perspectiveExtension>
+</extension>
+
+ <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="webx.studio.server.MockStartup">
+      </startup>
+   </extension>
+ <extension
+       point="org.eclipse.ui.actionSets">
+    <actionSet
+          id="jeju.menu.actionSet"
+          label="Jeju"
+          visible="false">
+       <menu
+             id="jeju.menu"
+             label="&amp;Jeju"
+             path="additions">
+          <separator
+                name="group1">
+          </separator>
+          <separator
+                name="group2">
+          </separator>
+       </menu>
+       <action
+             class="webx.studio.server.ui.actions.ExportLogAction"
+             id="jeju.server.action1"
+             label="Export Log"
+             menubarPath="jeju.menu/group1"
+             style="push">
+       </action>
+       <action
+             class="webx.studio.server.ui.actions.OpenLogAction"
+             id="jeju.server.action2"
+             label="Open Log"
+             menubarPath="jeju.menu/group2"
+             style="push">
+       </action>
+    </actionSet>
+ </extension>
+ <extension
+       point="org.eclipse.ui.preferencePages">
+    <page
+          class="webx.studio.server.preference.JejuPreferencePage"
+          id="jeju.perference.pages"
+          name="Jeju">
+    </page>
+    <page
+          category="jeju.perference.pages"
+          class="webx.studio.server.preference.LogPreferencePage"
+          id="jeju.perference.pages.log"
+          name="Log">
+    </page>
+ </extension>
+ <extension
+       point="org.eclipse.debug.ui.launchShortcuts">
+       <!--
+    <shortcut
+          class="jeju.server.ui.actions.ServerLaunchShortcut"
+          icon="icons/jetty_server.png"
+          id="jeju.server.launchShortcut"
+          label="Run on Server"
+          modes="run, debug">
+       <contextualLaunch>
+          <enablement>
+             <test
+                   property="jeju.server.isRunnable"
+                   value="true">
+             </test></enablement>
+          <contextLabel
+                label="Run On Jeju Server"
+                mode="run">
+          </contextLabel>
+          <contextLabel
+                label="Debug on Jeju Server"
+                mode="debug">
+          </contextLabel>
+       </contextualLaunch>
+    </shortcut>
+    -->
+     <shortcut
+          class="webx.studio.service.server.ui.actions.ServerLaunchShortcut"
+          icon="icons/service_server.png"
+          id="jeju.service.server.launchShortcut"
+          label="Run on Boort"
+          modes="run, debug">
+       <contextualLaunch>
+          <enablement>
+             <test
+                   property="jeju.server.isRunnable"
+                   value="true">
+             </test></enablement>
+          <contextLabel
+                label="Run On Boort"
+                mode="run">
+          </contextLabel>
+          <contextLabel
+                label="Debug on Boort"
+                mode="debug">
+          </contextLabel>
+       </contextualLaunch>
+    </shortcut>
+
+
+ </extension>
+ <extension
+       point="org.eclipse.core.expressions.propertyTesters">
+    <propertyTester
+          class="webx.studio.service.server.core.ServiceServerPropertyTester"
+          id="jeju.server.propertyTester"
+          namespace="jeju.server"
+          properties="isRunnable"
+          type="java.lang.Object">
+    </propertyTester>
+ </extension>
+ <extension
+       point="org.eclipse.ui.preferencePages">
+    <page
+          category="jeju.perference.pages"
+          class="webx.studio.server.ui.preference.ServerPreference"
+          id="jeju.server.preference.page"
+          name="Server">
+    </page>
+ </extension>
+</plugin>

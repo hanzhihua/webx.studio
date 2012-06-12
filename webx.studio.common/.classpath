@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="jars/antx-common-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/antx-config-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/classworlds-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-beanutils-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-codec-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-collections-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-digester-2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-httpclient-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-lang-2.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-logging-99.0-does-not-exist.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/jaxen-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/jcl-over-slf4j-1.5.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/jsch-0.1.42.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/log4j-1.2.16.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/logback-classic-0.9.18.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/logback-core-0.9.18.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/maven-2.2.1-uber.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/oro-2.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/plexus-utils-1.5.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/slf4j-api-1.5.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/velocity-1.6.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/commons-io-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

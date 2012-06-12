@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<group name="deploy script framkwork">
+		<property name="@appName@.production" defaultValue="true"  />
+		<property name="@appName@.unix.user" defaultValue="admin" description="Linux apache user"/>
+		<property name="@appName@.domainName" defaultValue="china.alibaba.com" description="app domain"/>
+		<!-- 基础软件路径 -->
+		<property name="@appName@.javahome" defaultValue="/usr/alibaba/java" description="JDK home"/>
+		<property name="@appName@.httpdhome" defaultValue="/usr/alibaba/httpd22" description="apache home"/>
+		<property name="@appName@.jettyhome" defaultValue="/usr/alibaba/jetty" description="jetty home"/>
+		<property name="@appName@.hummock.home" defaultValue="/usr/alibaba/hummock" description="hummock client home"/>
+		
+		<!-- 应用路径 -->
+		<property name="@appName@.root" defaultValue="/home/admin" description="app deploy dir"/>
+		<property name="@appName@.deployhome" defaultValue="${@appName@.root}/web-deploy" description="app deploy dir"/>
+		<property name="@appName@.jettyserverhome" defaultValue="${@appName@.deployhome}/jetty_server" description="jetty server dir"/>
+		
+		<property name="@appName@.output" defaultValue="${@appName@.root}/output" description="app output dir"/>
+		<!-- 端口 -->
+		<property name="@appName@.port" defaultValue="80" description="apache port"/>
+		<property name="@appName@.appserver.port" defaultValue="7001" description="web port "/>
+		
+		<!-- hummock -->
+        <property name="@appName@.hummock.enable" defaultValue="true" description="is enable Hummock"/>
+		<property name="@appName@.hummock.serveraddr" defaultValue="hz-hummock1.hst.dsl.en.alidc.net" description="hummock IP"/>
+	</group>
+    
+    <script>
+		<!-- apache config -->
+        <generate template="httpd/httpd.conf.vm" destfile="conf/httpd/httpd.conf" charset="UTF-8"/>
+		<generate template="httpd/httpd_base.conf.vm" destfile="conf/httpd/httpd_base.conf" charset="UTF-8"/>
+		<generate template="httpd/mod_proxy.conf.vm" destfile="conf/httpd/mod_proxy.conf" charset="UTF-8"/>
+        <generate template="httpd/mod_alibaba.conf.vm" destfile="conf/httpd/mod_alibaba.conf" charset="UTF-8"/>
+		<!-- hummock -->
+		<generate template="hummock/hummockclient.conf.vm" destfile="conf/hummock/hummockclient.conf" charset="UTF-8"/>
+        <generate template="hummock/mod_hummock.conf.vm" destfile="conf/hummock/mod_hummock.conf" charset="UTF-8"/>
+		<!-- jetty config -->
+	    <generate template="jetty/conf/jetty.xml.vm" destfile="conf/jetty/conf/jetty.xml" charset="UTF-8"/>
+		<generate template="jetty/conf/jetty-logging.xml.vm" destfile="conf/jetty/conf/jetty-logging.xml" charset="UTF-8"/>
+		<generate template="jetty/conf/start.ini.vm" destfile="conf/jetty/conf/start.ini" charset="UTF-8"/>
+		<!-- framework -->        
+		<generate template="bin/base_env.sh.vm" destfile="../bin/base_env.sh" charset="UTF-8"/>        
+        <generate template="bin/base_env.bat.vm" destfile="../bin/base_env.bat" charset="UTF-8"/> 
+        <generate template="jmx/jmx_monitor_management.properties.vm" destfile="conf/jmx/jmx_monitor_management.properties" charset="UTF-8"/>
+		
+    </script>
+</config>

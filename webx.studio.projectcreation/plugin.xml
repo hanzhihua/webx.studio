@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="jeju.ui.wizard"
+            class="webx.studio.projectcreation.ui.ProjectCreationWizard"
+            icon="icons/jeju_project.png"
+            id="webx3.projectcreation.ui.ProjectCreationWizard"
+            name="Project"
+            project="false">
+         <description>
+            Create Webx Projects
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         id="jejunature"
+         name="Jeju Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="webx.studio.projectcreation.ui.core.JejuNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            adaptable="true"
+            icon="icons/jeju_ project_ nature.png"
+            id="jeju.projectcreation.decorator"
+            label="Resource Decorator"
+            lightweight="true"
+            location="TOP_RIGHT"
+            state="true">
+         <enablement>
+            <and>
+               <objectState
+                     name="nature"
+                     value="jeju.projectcreation.ui.jejunature">
+               </objectState>
+               <objectClass
+                     name="org.eclipse.core.resources.IProject">
+               </objectClass>
+            </and>
+         </enablement>
+      </decorator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="jeju.projectcreation.ui.nojejuprject"
+            objectClass="org.eclipse.core.resources.IProject">
+         <visibility>
+            <and>
+               <objectState
+                     name="nature"
+                     value="org.eclipse.jdt.core.javanature">
+               </objectState>
+               <not>
+                  <objectState
+                        name="nature"
+                        value="jeju.projectcreation.ui.jejunature">
+                  </objectState>
+               </not>
+            </and>
+         </visibility>
+         <action
+               class="webx.studio.projectcreation.ui.actions.ConvertToWebXProjectAction"
+               icon="icons/jeju_ project_ nature.png"
+               id="jeju.server.convertToWebXProjectAction"
+               label="Convert to a Jeju project..">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="webx.studio.projectcreation.ui.core.JejuResourceListener">
+      </startup>
+      <startup
+            class="webx.studio.projectcreation.ui.core.SyncStartup">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="jeju.ui.view"
+            class="webx.studio.projectcreation.ui.views.ProjectView"
+            icon="icons/jeju_projects_view.png"
+            id="jeju.projectcreation.view"
+            name="Projects"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            contentProvider="webx.studio.projectcreation.ui.views.ProjectContentProvider"
+            id="jeju.projectcreation.ProjectsView.content.root"
+            labelProvider="webx.studio.projectcreation.ui.views.ProjectLabelProvider"
+            name="Project Provider">
+            <triggerPoints>
+         <or>
+            <instanceof
+                  value="webx.studio.projectcreation.ui.core.JejuProject">
+            </instanceof>
+            <instanceof
+                  value="webx.studio.projectcreation.ui.views.WebxProjectChildNode">
+            </instanceof>
+         </or>
+      </triggerPoints>
+      <possibleChildren>
+         <or>
+            <instanceof
+                  value="java.lang.Object">
+            </instanceof>
+         </or>
+      </possibleChildren>
+      <actionProvider
+            class="webx.studio.projectcreation.ui.actions.ProjectActionProvider"
+            id="jeju.projectcreation.ui.ProjectActionProvider">
+      </actionProvider>
+      </navigatorContent>
+   </extension>
+   <extension
+      point="org.eclipse.ui.navigator.viewer">
+   <viewerContentBinding
+         viewerId="jeju.projectcreation.view">
+      <includes>
+         <contentExtension
+               isRoot="true"
+               pattern="jeju.projectcreation.ProjectsView.content.root">
+         </contentExtension>
+      </includes>
+   </viewerContentBinding>
+	<viewer  viewerId="jeju.projectcreation.view">
+		<options>
+			<property name="org.eclipse.ui.navigator.hideLinkWithEditorAction"
+				value="true">
+			</property>
+		</options>
+	</viewer>
+</extension>
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            description="in Project view scope"
+            id="jeju.projectcreation.viewScope"
+            name="Jeju View Scope"
+            parentId="org.eclipse.ui.contexts.window">
+      </context>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="webx.studio.projectcreation.ui.editor.WebXProjectEditor"
+            default="false"
+            icon="icons/jeju_project.png"
+            id="jeju.projectcreation.ui.editor"
+            name="WebX Project Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="jeju.projectcreation.commands"
+            name="ProjectCreation">
+      </category>
+      <command
+            categoryId="jeju.projectcreation.commands"
+            defaultHandler="webx.studio.projectcreation.ui.FileHandle"
+            id="jeju.projectcreation.file.edit"
+            name="ProjectCreation File Edit">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="jeju.projectcreation.file.edit"
+            contextId="jeju.projectcreation.viewScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M2+M3+E">
+      </key>
+   </extension>
+	<extension point="org.eclipse.help.contexts">
+		<contexts file="help/context.xml" plugin="jeju.projectcreation.ui"/>
+	</extension>
+ <extension
+       point="org.eclipse.ui.preferencePages">
+    <page
+          category="jeju.perference.pages"
+          class="webx.studio.projectcreation.ui.preference.ProjectPreference"
+          id="jeju.projectcreation.preference.page"
+          name="Project">
+    </page>
+ </extension>
+ <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="webx.studio.projectcreation.ui.preference.ProjectPreferenceInitializer"/>
+   </extension>
+</plugin>

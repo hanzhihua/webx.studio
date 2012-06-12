@@ -1,0 +1,9 @@
+ServerHost "${@appName@_hummock_serveraddr}"
+AreaName @appName@
+LocalUDPPort 12806
+User ${@appName@_unix_user}
+Group ${@appName@_unix_user}
+LogLevel ERROR
+LogFile "| /usr/alibaba/cronolog/sbin/cronolog ${@appName@_output}/logs/hummock/%w/hummockclient_pipe.log"
+PidFile "${@appName@_output}/logs/hummock/hummockclient.pid"
+BlackHitFile "| /usr/alibaba/cronolog/sbin/cronolog ${@appName@_output}/logs/hummock/%w/black_pipe.hit"

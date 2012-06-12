@@ -1,0 +1,5 @@
+--pre=${@appName@_jettyserverhome}/conf/jetty-logging.xml
+OPTIONS=Server,jsp
+${@appName@_jettyserverhome}/conf/jetty.xml
+lib=${@appName@_jettyserverhome}/ext
+path=${@appName@_jettyserverhome}/ext

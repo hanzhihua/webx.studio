@@ -1,0 +1,35 @@
+## 定义基本的属性
+DefaultLanguage cn
+DefaultType text/plain
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+HostnameLookups Off
+ServerSignature Off
+## 默认日志级别为error，避免apache 2.2打印过多的warn信息
+#if( "${@appName@_production}" == "true" || "${@appName@_production}" == "run" )
+LogLevel error
+#end
+
+TypesConfig ${@appName@_httpdhome}/conf/mime.types
+
+LogFormat "%h %{ORIG_CLIENT_IP}i %l %u %t \"%m /%{HOST}i%U%q %H\" %>s %b %D \"%{Referer}i\" \"%{User-Agent}i\" %{ali_beacon_id}n - \"a=%{ali_apache_track}n; b=%{ali_apache_tracktmp}n; c=%{ali_resin_trace}n\" %{ali_server_name}n"   cookie_log
+CustomLog "|/usr/alibaba/cronolog/sbin/cronolog ${@appName@_output}/logs/cookie_logs/%w/cookie_log" cookie_log env=!HummockLog
+CustomLog "|/usr/bin/logger -p local1.info" cookie_log env=!HummockLog
+ErrorLog  "${@appName@_output}/logs/apache_error.log"
+
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+<Location />
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</Location>
+</IfModule>
+
+ErrorDocument 404 http://page.china.alibaba.com/shtml/static/wrongpage.html
+ErrorDocument 502 http://page.china.alibaba.com/shtml/static/wrongpage.html
+ErrorDocument 509 http://page.china.alibaba.com/shtml/static/error999.html
+
+# hide the server info in http header
+ServerTokens Prod

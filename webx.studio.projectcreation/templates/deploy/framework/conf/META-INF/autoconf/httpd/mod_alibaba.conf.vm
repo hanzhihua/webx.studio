@@ -1,0 +1,29 @@
+## beacon module
+LoadModule Beacon_module   ${@appName@_httpdhome}/modules/mod_Beacon.so
+<IfModule mod_Beacon.c>
+    EnableAliBeacon         on
+	AliBeaconProxy          off
+    AliBeaconLocation       header
+    AliBeaconAddType        text/html
+    AliBeaconIframeArgs     iframe_delete=true
+	AliBeaconTmpCookieName  aliBeacon_bcookie
+    AliBeaconLogFormat      p=2&u={/%{HOST}i%U%q}&m={%m}&s={%s}&r={%{Referer}i}&a={%{ali_apache_track}C}&b={-}&c={%{Resin-Trace}o}
+    AliBeaconNewJsCode   "<script type=text/javascript src=\"http://style.china.alibaba.com/js/common/beacon.js\"></script> \
+      <script type=text/javascript>var dmtrack_c='{%{Resin-trace}o}'; var dmtrack_pageid='%{PageID}l'; sk_dmtracking();</script> \
+      <noscript><img src=\"http://dmtracking.alibaba.com/b.jpg?%{LogData}L&ver=40&pageid=%{PageID}l&time=%{Time}l\" width=\"1\" height=\"1\" style=\"display:none\"></noscript>"
+</IfModule>
+
+## imgURLOutFilter module
+LoadModule imgURLOutFilterModule ${@appName@_httpdhome}/modules/mod_ImgURLOutFilter.so
+<IfModule mod_ImgURLOutFilter.c>
+    ImgURI_FilterMode      1
+    ImgURI_ServerIDBegin   0
+    ImgURI_ServerIDEnd     5
+    ImgURI_FilterCntTypes  text/htm;text/html;text/css;text/javascript
+    ImgURI_FilterURI       http://img.china.alibaba.com/
+    ImgURI_NewURI          http://i%02d.c.aliimg.com/
+</IfModule>
+
+#if( "${@appName@_hummock_enable}" == "true")
+Include ${@appName@_deployhome}/conf/hummock/mod_hummock.conf
+#end

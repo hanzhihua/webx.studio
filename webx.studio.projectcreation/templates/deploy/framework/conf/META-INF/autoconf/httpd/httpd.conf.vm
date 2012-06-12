@@ -1,0 +1,40 @@
+Listen ${@appName@_port}
+ServerRoot "${@appName@_output}"
+PidFile "${@appName@_output}/logs/httpd.pid"
+
+ServerName ${@appName@_domainName}
+User ${@appName@_unix_user}
+Group ${@appName@_unix_user}
+
+Timeout 15
+KeepAlive On
+MaxKeepAliveRequests 200
+KeepAliveTimeout 10
+MaxRequestsPerChild 20000
+
+<IfModule worker.c>
+	 ServerLimit      16
+     StartServers     3
+     MaxClients       1024
+     MinSpareThreads  25
+     MaxSpareThreads  250
+     ThreadsPerChild  64   
+</IfModule>
+
+DocumentRoot "${@appName@_deployhome}/htdocs"
+<Directory />
+    Options FollowSymLinks
+    AllowOverride None
+</Directory>
+
+<Directory "${@appName@_deployhome}/htdocs">
+    Options FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+## base config
+Include ${@appName@_deployhome}/conf/httpd/httpd_base.conf
+
+Include ${@appName@_deployhome}/conf/httpd/mod_alibaba.conf
+Include ${@appName@_deployhome}/conf/httpd/mod_proxy.conf

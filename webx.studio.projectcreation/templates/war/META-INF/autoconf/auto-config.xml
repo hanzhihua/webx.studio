@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+#set ($D="$")
+#set ($DOT = ".")
+<config description="自动配置：${projectName}-bundle-war">
+    <group name="web">
+    	<property name="${projectName}${DOT}output" description="输出根目录"/>
+        <property name="${projectName}${DOT}loggingRoot" defaultValue="${D}{${projectName}${DOT}output}/logs" description="日志文件根目录"/>
+        <property name="${projectName}${DOT}loggingLevel" defaultValue="ERROR" description="以何种级别记录日志"/>
+    </group>
+
+    <script>
+        <generate template="web.xml" destfile="WEB-INF/web.xml" charset="UTF-8"/>
+        <generate template="config.properties" destfile="WEB-INF/classes/config.properties" charset="UTF-8"/>
+    </script>
+
+</config>

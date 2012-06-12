@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="webx_studio"
+      label="WebX Studio"
+      version="0.1.0">
+
+   <description url="http://b2b-doc.alibaba-inc.com/display/RC/0.2.1+Jeju++Releae+note">
+      1 Enhance
+   Java/VM 一体化的编辑器 (集合Java、VM、VM Preview的多Tab编辑器）
+   Webx module(action,screen,control) 向导
+   已有vm无screen,control类，直接新增相关的screen或control
+   分析screen,control的代码，在vm中直接使用context里面的变量，不需要额外申明
+   对vm文件中的java代码做增加到相关java类的链接
+   </description>
+
+   <url>
+      <discovery label="Jeju home" url="http://b2b-doc.alibaba-inc.com/display/RC/Jeju_Home+%28WebX+IDE%29"/>
+   </url>
+
+   <plugin
+         id="webx.studio.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="webx.studio.projectcreation.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="webx.studio.server"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="webx.studio.server.jetty"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
