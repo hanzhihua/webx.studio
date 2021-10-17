@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T03:57:20.962Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="p4gY44UYUew3-u-rbVWh" version="15.5.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-10-17T04:02:31.757Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="iLd9m-UMQ8D1TO4LvSSV" version="15.5.4" type="github" pages="3">
   <diagram id="Asho-Rx_5MazEgMg47kG" name="第 1 页">
     <mxGraphModel dx="988" dy="561" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -183,15 +183,15 @@
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-0" />
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-1" parent="AI4CG6BNwmlH9jRs-2JJ-0" />
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-5" value="应用服务" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;align=center;verticalAlign=top;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
-          <mxGeometry x="-8" y="103.5" width="120" height="298.5" as="geometry" />
+          <mxGeometry x="-8" y="103.5" width="120" height="287.5" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-8" value="存储服务" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;align=center;verticalAlign=top;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
-          <mxGeometry x="176" y="103.5" width="120" height="298.5" as="geometry" />
+          <mxGeometry x="176" y="103.5" width="120" height="287.5" as="geometry" />
         </mxCell>
-        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-17" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;dashed=1;fillColor=none;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-17" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;dashed=1;fillColor=none;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
           <mxGeometry x="5" y="265" width="278" height="86" as="geometry" />
         </mxCell>
-        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-16" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;dashed=1;fillColor=none;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-16" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;dashed=1;fillColor=none;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
           <mxGeometry x="5" y="150" width="278" height="86" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-2" value="租户" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.tenant_admin;fontSize=12;fontColor=#000000;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
@@ -213,13 +213,13 @@
           <mxGeometry x="-133" y="276" width="53" height="109" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-13" value="指标/分析" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;align=center;verticalAlign=middle;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
-          <mxGeometry x="-133" y="444" width="120" height="60" as="geometry" />
+          <mxGeometry x="-133" y="421" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-14" value="管理" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;align=center;verticalAlign=middle;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
-          <mxGeometry x="31" y="444" width="120" height="60" as="geometry" />
+          <mxGeometry x="31" y="421" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-15" value="账单" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=12;align=center;verticalAlign=middle;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
-          <mxGeometry x="191" y="444" width="120" height="60" as="geometry" />
+          <mxGeometry x="191" y="421" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-18" value="存储隔离" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=1;fontSize=12;fillColor=#1ba1e2;align=center;verticalAlign=middle;strokeColor=#006EAF;fontColor=#ffffff;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
           <mxGeometry x="204" y="155" width="60" height="76" as="geometry" />
