@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T04:02:31.757Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="iLd9m-UMQ8D1TO4LvSSV" version="15.5.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-10-17T04:12:23.549Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="tHHu3i6a7LkkE6iqhPfa" version="15.5.4" type="github" pages="3">
   <diagram id="Asho-Rx_5MazEgMg47kG" name="第 1 页">
     <mxGraphModel dx="988" dy="561" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -226,6 +226,42 @@
         </mxCell>
         <mxCell id="AI4CG6BNwmlH9jRs-2JJ-19" value="存储隔离" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=1;fontSize=12;fillColor=#d80073;align=center;verticalAlign=middle;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
           <mxGeometry x="206" y="270" width="60" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-20" value="鉴权" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fillColor=#f9f7ed;align=center;verticalAlign=middle;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-48" y="864" width="368" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-21" value="微服务" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#1ba1e2;align=center;verticalAlign=middle;strokeColor=#006EAF;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-48" y="942" width="368" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-22" value="使&lt;br&gt;用&lt;br&gt;度&lt;br&gt;量" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#60a917;align=center;verticalAlign=middle;strokeColor=#2D7600;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-163" y="942" width="83" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-23" value="日&lt;br&gt;志" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#000000;fillColor=#f0a30a;align=center;verticalAlign=middle;strokeColor=#BD7000;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="357" y="942" width="83" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-24" value="数据访问层" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fillColor=#f9f7ed;align=center;verticalAlign=middle;strokeColor=#36393d;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-48" y="1099" width="368" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-25" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#6a00ff;align=center;verticalAlign=middle;strokeColor=#3700CC;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-48" y="1157" width="100" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-26" value="独立数据库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#000000;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="-35" y="1233" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-28" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#6a00ff;align=center;verticalAlign=middle;strokeColor=#3700CC;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="98" y="1160" width="100" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-29" value="独立数据库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#000000;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="111" y="1236" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-30" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#008a00;align=center;verticalAlign=middle;strokeColor=#005700;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="228" y="1160" width="100" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-31" value="共享数据库" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#000000;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="241" y="1236" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="AI4CG6BNwmlH9jRs-2JJ-32" value="T1 ---------&lt;br&gt;T2 ---------&lt;br&gt;T3 ---------&lt;br&gt;" style="shape=card;whiteSpace=wrap;html=1;shadow=0;fontSize=12;fontColor=#ffffff;fillColor=#1ba1e2;align=center;verticalAlign=middle;direction=south;strokeColor=#006EAF;" vertex="1" parent="AI4CG6BNwmlH9jRs-2JJ-1">
+          <mxGeometry x="463" y="955" width="100" height="95" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
