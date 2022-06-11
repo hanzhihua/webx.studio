@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-11T09:58:04.462Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="cDo7vUy7iV2FGj_5N_O4" version="19.0.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-06-11T13:18:26.697Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="RP_7FCFV6bc2PzI34qut" version="19.0.3" type="github" pages="3">
   <diagram id="DLoVvribL-V9UopOUuG_" name="第 1 页">
     <mxGraphModel dx="946" dy="504" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -174,24 +174,30 @@
     </mxGraphModel>
   </diagram>
   <diagram id="XjrZJW8cLm7NLJz8LyQk" name="第 3 页">
-    <mxGraphModel dx="946" dy="1707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1051" dy="998" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-68" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="605" y="-131" width="173" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-55" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="78" y="-131" width="460" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-54" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="90" y="-120" width="460" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-29" value="线程" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="110" y="-110" width="460" height="450" as="geometry" />
+        </mxCell>
         <mxCell id="ikL_giVON-Nv5qgRBM9D-31" value="栈帧" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
           <mxGeometry x="240" y="-20" width="160" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-29" value="一个线程" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1700" y="-120" width="570" height="450" as="geometry" />
         </mxCell>
         <mxCell id="ikL_giVON-Nv5qgRBM9D-2" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;direction=north;" vertex="1" parent="1">
           <mxGeometry x="210" y="-20" width="250" height="325" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-4" value="栈帧" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="250" width="160" height="45" as="geometry" />
-        </mxCell>
         <mxCell id="ikL_giVON-Nv5qgRBM9D-6" value="栈帧" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
-          <mxGeometry x="240" y="120" width="160" height="120" as="geometry" />
+          <mxGeometry x="240" y="120" width="160" height="163" as="geometry" />
         </mxCell>
         <mxCell id="ikL_giVON-Nv5qgRBM9D-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="250" y="200" width="120" height="30" as="geometry" />
@@ -241,13 +247,13 @@
             <mxPoint x="815" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-25" value="局部变量表，数组结构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;" vertex="1" parent="1">
-          <mxGeometry x="180" y="210" width="60" height="30" as="geometry" />
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-25" value="局部变量表" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="163" y="201" width="77" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-27" value="对应一个方法" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#3333FF;" vertex="1" parent="1">
-          <mxGeometry x="410" y="257.5" width="90" height="30" as="geometry" />
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-27" value="对应一个方法" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="397" y="202" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-28" value="调用栈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-28" value="调用栈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=15;" vertex="1" parent="1">
           <mxGeometry x="285" y="310" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ikL_giVON-Nv5qgRBM9D-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -307,14 +313,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-43" value="方法调用指令" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-43" value="方法调用指令" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
           <mxGeometry x="270" y="150" width="50" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-45" value="参数传递" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-45" value="参数传递" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="130" y="110" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" source="ikL_giVON-Nv5qgRBM9D-47" target="ikL_giVON-Nv5qgRBM9D-18">
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=10;" edge="1" parent="1" target="ikL_giVON-Nv5qgRBM9D-18">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="-19" as="sourcePoint" />
             <Array as="points">
               <mxPoint x="295" y="-40" />
               <mxPoint x="510" y="-40" />
@@ -322,14 +329,35 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-47" value="方法返回值" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-26" value="操作数栈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="370" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-50" value="PC寄存器" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="608" y="255" width="163" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-51" value="方法区" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="-110" width="139" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-52" value="执行引擎（编译型、解释型）" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="89" y="357" width="683" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-57" value="本地指令" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="270" y="238" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-58" value="返回值" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="508" y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-59" value="本地指令" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
           <mxGeometry x="270" y="5" width="50" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-26" value="操作数栈，栈结构" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0000FF;" vertex="1" parent="1">
-          <mxGeometry x="384" y="165" width="60" height="30" as="geometry" />
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=15;fontColor=#FFFFFF;" edge="1" parent="1" source="ikL_giVON-Nv5qgRBM9D-51" target="ikL_giVON-Nv5qgRBM9D-51">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ikL_giVON-Nv5qgRBM9D-50" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fontColor=#3333FF;" vertex="1" parent="1">
-          <mxGeometry x="20" y="-15" width="120" height="60" as="geometry" />
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-67" value="堆" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="60" width="139" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ikL_giVON-Nv5qgRBM9D-69" value="动&lt;br style=&quot;font-size: 14px;&quot;&gt;态&lt;br style=&quot;font-size: 14px;&quot;&gt;链&lt;br style=&quot;font-size: 14px;&quot;&gt;接" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="571" y="-54" width="49" height="184" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
